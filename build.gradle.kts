@@ -27,6 +27,7 @@ dependencies {
     implementation("org.springframework.boot:spring-boot-starter-thymeleaf")
     implementation("org.springframework.boot:spring-boot-starter-web")
     implementation("org.thymeleaf.extras:thymeleaf-extras-springsecurity6")
+    implementation("org.hibernate.orm:hibernate-core:6.2.8.Final")
     compileOnly("org.projectlombok:lombok")
     developmentOnly("org.springframework.boot:spring-boot-devtools")
     runtimeOnly("com.h2database:h2")
@@ -40,3 +41,8 @@ dependencies {
 tasks.withType<Test> {
     useJUnitPlatform()
 }
+/*
+springBoot {
+    mainClass = "com.masongarrett.taskmanagementsystem.TaskManagementSystemApplication"
+}
+*/
