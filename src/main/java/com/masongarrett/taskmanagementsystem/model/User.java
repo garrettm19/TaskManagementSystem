@@ -1,21 +1,16 @@
 package com.masongarrett.taskmanagementsystem.model;
 
+import jakarta.persistence.*;
 import java.sql.Date;
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
 
-@Entity
-@Table(name = "user")
+@Entity //@Entity is used to tell Java that this class represents a database table
+@Table(name = "user") //@Table is used to define the specific table
 public class User {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
-    private Long id;
+    @Id //@Id marks the primary key
+    @GeneratedValue(strategy = GenerationType.IDENTITY) //@GeneratedValue(strategy = GenerationType.IDENTITY) is used to automatically generate values for identification
+    @Column(name = "id") //@Column defines the specific column
+    private long id;
 
     @Column(name = "roleId", nullable = false)
     private Short roleId;
@@ -53,11 +48,11 @@ public class User {
     @Column(name = "profile", columnDefinition = "TEXT")
     private String profile;
 
-    public Long getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(long id) {
         this.id = id;
     }
 

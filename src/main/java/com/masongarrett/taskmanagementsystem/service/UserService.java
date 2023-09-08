@@ -7,7 +7,7 @@ import com.masongarrett.taskmanagementsystem.model.User;
 public interface UserService {
 
     List<User> get();
-    User get(int id);
+    User get(long id);
     void save(User user);
-    void delete(int id);
+    void delete(long id);
 }
