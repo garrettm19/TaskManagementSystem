@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController //@RestController means the class will handle HTTP requests (It will be an API Endpoint)
-@RequestMapping("/api") //@RequestMapping("/api") organizes everything in the class to be under the path /api
+@RequestMapping("/api/user") //@RequestMapping("/api/user") organizes everything in the class to be under the path /api/user
 public class UserController {
 
     @Autowired //@AutoWired is saying "Hey, I need this, and please make sure it's available for me."
@@ -22,18 +22,18 @@ public class UserController {
         this.userService = userService;
     } */
 
-    @PostMapping("/user") //@PostMapping means that the method handles HTTP Post requests (create), ("/user") specifies the endpoint
+    @PostMapping("/") //@PostMapping means that the method handles HTTP Post requests (create)
     public User save(@RequestBody User user) { //@RequestBody is saying "Hey, the important data you need is inside the request body, so pay attention to it."
         userService.save(user);
         return user;
     }
 
-    @GetMapping("/user") //@GetMapping means that the method handles HTTP Get requests (read)
+    @GetMapping("/") //@GetMapping means that the method handles HTTP Get requests (read)
     public List<User> get() {
         return userService.get();
     }
 
-    @GetMapping("/user/{id}")
+    @GetMapping("/{id}")
     public User get(@PathVariable long id) { //@PathVariable is looking for a long that is placed right after the websites address {id}
         User userObj = userService.get(id);
         if (userObj == null) {
@@ -42,13 +42,13 @@ public class UserController {
         return userObj;
     }
 
-    @PutMapping("/user") //@PutMapping means that the method handles HTTP Put requests (update)
+    @PutMapping("/") //@PutMapping means that the method handles HTTP Put requests (update)
     public User update(@RequestBody User userObj) {
         userService.save(userObj);
         return userObj;
     }
 
-    @DeleteMapping("/user/{id}") //@DeleteMapping means that the method handles HTTP Delete requests (delete)
+    @DeleteMapping("/{id}") //@DeleteMapping means that the method handles HTTP Delete requests (delete)
     public String delete(@PathVariable long id) {
         userService.delete(id);
         return "Employee has been deleted with Id: " + id;

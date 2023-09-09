@@ -10,7 +10,7 @@ public class User {
     @Id //@Id marks the primary key
     @GeneratedValue(strategy = GenerationType.IDENTITY) //@GeneratedValue(strategy = GenerationType.IDENTITY) is used to automatically generate values for identification
     @Column(name = "id") //@Column defines the specific column
-    private long id;
+    private Long id;
 
     @Column(name = "roleId", nullable = false)
     private Short roleId;
@@ -48,11 +48,11 @@ public class User {
     @Column(name = "profile", columnDefinition = "TEXT")
     private String profile;
 
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
