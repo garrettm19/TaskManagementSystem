@@ -3,7 +3,7 @@ package com.masongarrett.taskmanagementsystem.model;
 import jakarta.persistence.*;
 import lombok.*;
 
-import java.sql.Date;
+import java.util.Date;
 
 
 @Getter
@@ -42,4 +42,5 @@ public class User {
 
     @Column(name = "profile", columnDefinition = "TEXT")
     private String profile;
+
 }

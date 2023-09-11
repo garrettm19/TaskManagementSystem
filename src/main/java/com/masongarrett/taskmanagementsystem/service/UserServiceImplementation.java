@@ -37,4 +37,14 @@ public class UserServiceImplementation implements UserService{
     public void delete(long id) {
         userDAO.delete(id);
     }
+
+    @Override
+    public User findUserByEmail(String email) {
+        return userDAO.get(email);
+    }
+
+    @Override
+    public User findByEmailPassword(String email, String password) {
+        return userDAO.findByEmailPassword(email, password);
+    }
 }

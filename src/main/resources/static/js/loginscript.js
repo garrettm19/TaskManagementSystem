@@ -18,7 +18,12 @@ pwShowHide.forEach(eyeIcon => {
 
     })
 })
-
+/*
+setTimeout(()=>{
+    const someText=document.getElementById("error-message-fade");
+    someText.style.display="none";
+},3000);
+*/
 links.forEach(link => {
     link.addEventListener("click", e => {
         e.preventDefault(); //preventing form submit

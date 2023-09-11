@@ -31,6 +31,17 @@ public class UserDAOImplementation implements UserDAO {
     }
 
     @Override
+    public User get(String email) {
+        Session currentSession = entityManager.unwrap(Session.class);
+        Query<User> query = currentSession.createQuery("from User where email = :email", User.class);
+        query.setParameter("email", email);
+        User userObj = query.uniqueResult();
+
+        return userObj;
+    }
+
+
+    @Override
     public void save(User user) {
         Session currentSession = entityManager.unwrap(Session.class);
         currentSession.merge(user);
@@ -51,4 +62,16 @@ public class UserDAOImplementation implements UserDAO {
         User userObj = currentSession.get(User.class, id);
         currentSession.remove(userObj);
     }
+
+    @Override
+    public User findByEmailPassword(String email, String password) {
+        Session currentSession = entityManager.unwrap(Session.class);
+        Query<User> query = currentSession.createQuery("from User where email = :email and password = :password", User.class);
+        query.setParameter("email", email);
+        query.setParameter("password", password);
+        User userObj = query.uniqueResult();
+
+        return userObj;
+    }
+
 }

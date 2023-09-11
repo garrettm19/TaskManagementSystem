@@ -162,6 +162,25 @@ a.google span{
     opacity: 0.6;
     color: #232836;
 }
+.alert {
+    padding: 20px;
+    background-color: #f44336;
+    color: white;
+    padding-left:50px;
+}
+.closebtn {
+    margin-left: 15px;
+    color: white;
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.closebtn:hover {
+    color: black;
+}
 @media screen and (max-width: 400px) {
     .form{
         padding: 20px 10px;

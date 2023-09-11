@@ -10,4 +10,6 @@ public interface UserService {
     User get(long id);
     void save(User user);
     void delete(long id);
+    User findUserByEmail(String email);
+    User findByEmailPassword(String email, String password);
 }

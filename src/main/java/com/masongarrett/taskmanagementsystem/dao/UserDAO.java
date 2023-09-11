@@ -8,6 +8,8 @@ public interface UserDAO {
 
     List<User> get();
     User get(long id);
+    User get(String email);
     void save(User user);
     void delete(long id);
+    User findByEmailPassword(String email, String password);
 }
