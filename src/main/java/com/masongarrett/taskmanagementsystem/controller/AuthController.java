@@ -1,6 +1,8 @@
 package com.masongarrett.taskmanagementsystem.controller;
 
+import com.masongarrett.taskmanagementsystem.model.Task;
 import com.masongarrett.taskmanagementsystem.model.User;
+import com.masongarrett.taskmanagementsystem.service.TaskService;
 import com.masongarrett.taskmanagementsystem.service.UserService;
 import jakarta.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,18 +18,11 @@ public class AuthController {
     @Autowired
     private UserService userService;
 
+    @Autowired
+    private TaskService taskService;
+
     @RequestMapping("/")
     public String home() {
-        return "login";
-    }
-
-    @RequestMapping("/register")
-    public String register() {
-        return "register";
-    }
-
-    @RequestMapping("/login")
-    public String login() {
         return "login";
     }
 
@@ -62,6 +57,7 @@ public class AuthController {
 
                 // Add user-related information to the session
                 session.setAttribute("email", email);
+                session.setAttribute("userId", user.getId());
             }
         }
         return mv;
@@ -85,6 +81,7 @@ public class AuthController {
 
             if (email.equalsIgnoreCase(uemail) && password.equalsIgnoreCase(upass)) {
                 session.setAttribute("email", email);
+                session.setAttribute("userId", auser.getId());
                 return new ModelAndView("taskmanager"); // Redirect to "taskmanager" upon successful login
             } else {
                 mv.addObject("error", "Incorrect password.");
@@ -109,5 +106,11 @@ public class AuthController {
     {
         return "dummy";
     }
+
+    @GetMapping("/createTask")
+    public String redirectToCreateTask() {
+        return "createtask";
+    }
+
 
 }

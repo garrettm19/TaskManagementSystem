@@ -42,4 +42,14 @@ public class TaskDAOImplementation implements TaskDAO {
         Task task = currentSession.get(Task.class, id);
         currentSession.remove(task);
     }
+
+    @Override
+    public List<Task> getByState(String state) {
+        Session currentSession = entityManager.unwrap(Session.class);
+        Query<Task> query = currentSession.createQuery("from Task where state = :state", Task.class);
+        query.setParameter("state", state);
+        List<Task> tasks = query.getResultList();
+        return tasks;
+    }
+
 }

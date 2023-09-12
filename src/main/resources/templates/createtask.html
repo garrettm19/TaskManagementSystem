@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Login and Signup Form</title>
+
+    <!-- Import the font from Google Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Your CSS -->
+    <link rel="stylesheet" th:href="@{/css/createtaskstyle.css}">
+
+    <!-- Boxicons CSS -->
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+<section class="container forms">
+    <div class="form login">
+        <div class="form-content">
+            <header>Create Task</header>
+            <form action="/api/task/createTask" method="post">
+                <div class="field input-field">
+                    <label for="title">Title:</label>
+                    <input type="text" id="title" name="title" class="input">
+                </div>
+                <div class="field input-field">
+                    <label for="state">Stage:</label>
+                    <select id="state" name="state" class="input">
+                        <option value="idea" selected>Idea</option>
+                        <option value="inprogress">In Progress</option>
+                        <option value="needsreview">Needs Review</option>
+                        <option value="completed">Completed</option>
+                    </select>
+                </div>
+                <div class="field input-field">
+                    <label for="tag">Category:</label>
+                    <select id="tag" name="tag" class="input">
+                        <option value="personal" selected>Personal</option>
+                        <option value="school">School</option>
+                        <option value="work">Work</option>
+                    </select>
+                </div>
+                <div class="field input-field">
+                    <label for="description">Description:</label>
+                    <textarea id="description" name="description" class="input" rows="4" cols="50"></textarea>
+                </div>
+                <div class="field button-field">
+                    <button type="submit">Create</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+<script src="" th:src="@{/js/loginscript.js}"></script>
+</body>
+</html>

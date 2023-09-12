@@ -20,8 +20,8 @@
     <link rel="shortcut icon" type="image/png" th:href="@{/image/favicon.ico}"/>
 </head>
 <body>
-<div class="alert">
-    <span class="closebtn" th:if="${error}" onclick="this.parentElement.style.display='none';">&times;</span>
+<div class="alert" th:if="${error}">
+    <span class="closebtn" onclick="this.parentElement.style.display='none';" th:if="${error}">&times;</span>
     <span th:text="${error}"></span>
 </div>
 

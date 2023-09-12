@@ -114,15 +114,15 @@ h1 {
     padding: 2px 13px;
     font-size: 12px;
 }
-.task__tag--copyright {
+.task__tag--school {
     color: var(--tag-4-text);
     background-color: var(--tag-4);
 }
-.task__tag--design {
+.task__tag--personal {
     color: var(--tag-3-text);
     background-color: var(--tag-3);
 }
-.task__tag--illustration {
+.task__tag--work {
     color: var(--tag-2-text);
     background-color: var(--tag-2);
 }
@@ -254,6 +254,7 @@ h1 {
 .task-icon--edit {
     background-color: #7784ee;
 }
+
 @media only screen and (max-width: 1300px) {
     .project {
         max-width: 100%;

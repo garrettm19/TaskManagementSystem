@@ -10,4 +10,6 @@ public interface TaskDAO {
     Task get(long id);
     void save(Task task);
     void delete(long id);
+    List<Task> getByState(String state);
+
 }

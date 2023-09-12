@@ -10,4 +10,7 @@ public interface TaskService {
     Task get(long id);
     void save(Task task);
     void delete(long id);
+    public List<Task> getTasksByState(String state);
+    public void updateTaskState(Long taskId, String newState) throws TaskNotFoundException;
+
 }
