@@ -11,6 +11,8 @@ https://github.com/garrettm19/TaskManagementSystem/assets/94884228/5d28c3f0-c8e0
 ## Schema
 ![alt text](TaskManagementSchema.png)
 
+# Quick Start
+
 ## Create Database
 
 CREATE DATABASE task_manager;
@@ -110,6 +112,11 @@ VALUES (3, 'Completed Task 3', 'Wrap up and showcase a personal artwork', NOW() 
 
 INSERT INTO task (userId, title, description, createdAt, state, tag)
 VALUES (4, 'Completed Task 4', 'Deliver a software release to customers', NOW() - INTERVAL 1 DAY, 'completed', 'work');
+
+## Edit application.properties
+* spring.datasource.url = "your database url"
+* spring.datasource.username = "your username"
+* spring.datasource.password = "your password" 
 
 ## To Do
 This is still a work in progress.
