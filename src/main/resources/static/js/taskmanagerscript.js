@@ -184,18 +184,20 @@ document.addEventListener('DOMContentLoaded', (event) => {
             capitalizedTag = task.tag.charAt(0).toUpperCase() + task.tag.slice(1);
         }
 
-
         // Format the created_at column
         const formattedCreatedAt = formatDate(task.createdAt);
+
+        // Define the URL
+        const linkURL = 'https://mason-garrett.com';
 
         taskElement.innerHTML = `
     <div class='task__tags'><span class='task__tag task__tag--${task.tag}'>${capitalizedTag}</span><button class='task__options'><i class="fas fa-ellipsis-h"></i></button></div>
     <p>${task.title}</p>
     <div class='task__stats'>
         <span><time datetime="${task.date}"><i class="fas fa-flag"></i>${formattedCreatedAt}</time></span>
-        <span><i class="fas fa-comment"></i>${task.comments}</span>
-        <span><i class="fas fa-paperclip"></i>${task.attachments}</span>
-        <span class='task__owner'>${task.owner}</span>
+        <span><i class="fas fa-comment"></i>N/A</span>
+         <span><i class="fas fa-paperclip"></i><a href="${linkURL}" target="_blank">Click Me</a></span>
+        <span class='task__owner'></span>
     </div>
     `;
         // Add event listeners for drag-and-drop
