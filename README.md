@@ -1,6 +1,6 @@
 # TaskManagementSystem
 ## Purpose
-The aim of this project was to impress Fidelity Leap program recruiters by demonstrating my skills, quick learning ability and passion for the field.
+The aim of this project was to learn the Spring boot tech stack as well as demonstrate common Java OOP principles.
 
 ## Example
 https://github.com/garrettm19/TaskManagementSystem/assets/94884228/5d28c3f0-c8e0-4b2d-b857-a0eceab364d9
